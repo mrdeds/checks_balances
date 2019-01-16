@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "c6d30972-3497-4e6a-b073-90da04284b33",
+		"name": "Checks and Balances copy",
+		"description": "# Introduction\nIt's a service that lets create a new account, check the balance of the accounts in the system, and make transactions: deposits and withdrawals\n\n# Error Codes\n404 - Resource couldn't be found. Probably not existing account\n400 - Bad request. Probably withdrawl from an account without necessay funds",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/checks_and_balances/api/v1.0/new_account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Esteban\", \n\t\"surname\": \"Díaz\", \n\t\"product\":\"Rewards Account\", \n\t\"balance\": 100.00\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/checks_and_balances/api/v1.0/new_account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"checks_and_balances",
+						"api",
+						"v1.0",
+						"new_account"
+					]
+				},
+				"description": "Makes a new account"
+			},
+			"response": [
+				{
+					"id": "4eee42a7-0d36-42db-a836-e9fa1d5712f4",
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/checks_and_balances/api/v1.0/new_account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"checks_and_balances",
+								"api",
+								"v1.0",
+								"new_account"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/checks_and_balances/api/v1.0/account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/checks_and_balances/api/v1.0/account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"checks_and_balances",
+						"api",
+						"v1.0",
+						"account"
+					]
+				},
+				"description": "Gets the details from an account"
+			},
+			"response": [
+				{
+					"id": "4715fe09-49c8-4f4b-a1a1-2e770cf91f84",
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/checks_and_balances/api/v1.0/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"checks_and_balances",
+								"api",
+								"v1.0",
+								"account"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"id": "7ca3ee86-05f9-4bc8-bee0-783bf3a22172",
+					"name": "http://localhost:5000/checks_and_balances/api/v1.0/account",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/checks_and_balances/api/v1.0/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"checks_and_balances",
+								"api",
+								"v1.0",
+								"account"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "96",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/css; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Dec 2018 23:04:01 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.6.7",
+							"name": "Server",
+							"description": "A name for the server"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\": 3, \"name\": \"Esteban\", \"surname\": \"Díaz\", \"product\": \"Rewards Account\", \"balance\": 100.0}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/checks_and_balances/api/v1.0/transaction",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"account_id\": 0,\n\t\"transaction\": \"deposit\",\n\t\"amount\": 300.00\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/checks_and_balances/api/v1.0/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"checks_and_balances",
+						"api",
+						"v1.0",
+						"transaction"
+					]
+				},
+				"description": "Makes a deposit/withdrawal from an account"
+			},
+			"response": [
+				{
+					"id": "3f49116a-cfe1-4050-8c20-b4690cd56a8b",
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/checks_and_balances/api/v1.0/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"checks_and_balances",
+								"api",
+								"v1.0",
+								"transaction"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"id": "6805a90f-7e6c-4ea6-af51-a73465735d56",
+					"name": "http://localhost:5000/checks_and_balances/api/v1.0/transaction",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"account_id\": 0,\n\t\"transaction\": \"deposit\",\n\t\"amount\": 300.00\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/checks_and_balances/api/v1.0/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"checks_and_balances",
+								"api",
+								"v1.0",
+								"transaction"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "39",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Dec 2018 05:47:58 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.6.7",
+							"name": "Server",
+							"description": "A name for the server"
+						}
+					],
+					"cookie": [],
+					"body": "{\"Deposit Done. New balance\": \"310.05\"}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/checks_and_balances/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/checks_and_balances/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"checks_and_balances",
+						"health"
+					]
+				},
+				"description": "Checks if the service is up"
+			},
+			"response": [
+				{
+					"id": "dc2a19f8-8adb-4b35-88e6-148c9917b496",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/checks_and_balances/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"checks_and_balances",
+								"health"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}
