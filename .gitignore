@@ -1,2 +1,5 @@
 *.DS_Store
-/flask
+/flask/lib
+/flask/include
+pip-selfcheck.json
+pyvenv.cfg
